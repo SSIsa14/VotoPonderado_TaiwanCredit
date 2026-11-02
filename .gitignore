@@ -1,0 +1,5 @@
+.venv/
+.ipynb_checkpoints/
+__pycache__/
+*.key
+*_key.txt

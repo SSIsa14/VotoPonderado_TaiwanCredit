@@ -25,12 +25,18 @@ data/
 src/
   datos.py                             partición 80/20, estandarización y desviaciones estándar
   pesos.py                             pesos w(x) de OLS, ridge, k-NN y árbol
+  bosque.py                            pesos w(x) del bosque, proximidad y verificar
+  evidencia.py                         N_ef, concentración c(x) y testigos
 notebooks/
   00_preparacion.ipynb                 0.1, 0.2 y 0.4
   01_pesos_ols_ridge_knn_arbol.ipynb   1.1, 1.2 y 1.3
+  02_bosque_verificacion_proximidad.ipynb  1.4, 1.5 y 1.6
+  03_validacion_cruzada.ipynb          λ, k, profundidad y min_samples_leaf con 5 pliegues
+  04_evidencia_2_1_2_2.ipynb           2.1 y 2.2
 resultados/
   hiperparametros.json                 λ, k, profundidad y min_samples_leaf (los sobrescribe la validación cruzada)
   sd_taiwan.csv                        desviación estándar de cada variable antes de estandarizar (0.4)
+  consultas.json                       las tres filas de prueba de 2.1 (las usa 4.2)
 figs/                                  figuras parteN_descripcion.png
 slides/                                presentación en PDF
 ```

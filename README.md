@@ -27,16 +27,24 @@ src/
   pesos.py                             pesos w(x) de OLS, ridge, k-NN y árbol
   bosque.py                            pesos w(x) del bosque, proximidad y verificar
   evidencia.py                         N_ef, concentración c(x) y testigos
+  flexibilidad.py                      trazas tr(S) de 3.1 y procedencia del aporte de Jorge
+  optimismo.py                         simulación del optimismo (3.4)
 notebooks/
   00_preparacion.ipynb                 0.1, 0.2 y 0.4
   01_pesos_ols_ridge_knn_arbol.ipynb   1.1, 1.2 y 1.3
   02_bosque_verificacion_proximidad.ipynb  1.4, 1.5 y 1.6
   03_validacion_cruzada.ipynb          λ, k, profundidad y min_samples_leaf con 5 pliegues
-  04_evidencia_2_1_2_2.ipynb           2.1 y 2.2
+  04_evidencia_2_1_2_2.ipynb           2.1 a 2.4
+  05_flexibilidad_3_1_3_3.ipynb        3.1, 3.2 y 3.3
+  06_optimismo_oob_3_4_3_6.ipynb       3.4, 3.5 y 3.6
+  07_escala_4_1_4_4.ipynb              Parte 4 (4.1 a 4.4)
 resultados/
   hiperparametros.json                 λ, k, profundidad y min_samples_leaf (los sobrescribe la validación cruzada)
   sd_taiwan.csv                        desviación estándar de cada variable antes de estandarizar (0.4)
   consultas.json                       las tres filas de prueba de 2.1 (las usa 4.2)
+  parte3_optimismo_simulado.csv        optimismo simulado contra 2σ²tr(S)/n (3.4)
+  parte3_oob.csv                       error de entrenamiento, out-of-bag y prueba del bosque (3.6)
+  parte3_4_aporte_memo.md              párrafo de 3.4–3.6 y la Parte 4 para el memo
 figs/                                  figuras parteN_descripcion.png
 slides/                                presentación en PDF
 ```
@@ -57,6 +65,16 @@ se descarga con `fetch_california_housing()`.
 
 - Los pesos se calculan a mano con numpy; cada notebook comprueba con `assert` que reproducen el `.predict()` de scikit-learn.
 - Se utilizaron herramientas de IA como apoyo; el detalle se declara al inicio de cada archivo.
+
+## Aporte de Gregorio: 3.4–3.6 y Parte 4
+
+- `06_optimismo_oob_3_4_3_6.ipynb` va después del 05, porque 3.5 lee `resultados/parte3_error_flexibilidad.csv`.
+  Corre en menos de un minuto.
+- `07_escala_4_1_4_4.ipynb` solo depende de los datos, `sd_taiwan.csv`, `consultas.json` y `hiperparametros.json`.
+  Es la única parte que usa las variables crudas (`cargar_taiwan(..., escalar=False)`). Tarda unos 30 segundos.
+- Figuras para las diapositivas: `parte3_optimismo_simulado.png`, `parte3_oob.png`, `parte4_knn_escala.png`,
+  `parte4_kmeans_k.png` y `parte4_kmeans_grupos.png`.
+- Se utilizó Claude (Anthropic) como apoyo; la declaración está al inicio de cada archivo.
 
 ## Aporte de Jorge: 2.3–2.4 y 3.1–3.3
 

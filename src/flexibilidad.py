@@ -1,8 +1,12 @@
-"""Trazas y procedencia de 2.3–2.4 y 3.1–3.3 (responsabilidad: Jorge).
+"""
+Trazas tr(S) y registro de procedencia de 2.3–2.4 y 3.1–3.3.
 
-Asistencia de IA: OpenAI Codex apoyó la implementación, las explicaciones y
-la validación numérica. El integrante debe revisar y poder defender su aporte.
-No modifica las funciones compartidas de datos, pesos ni evidencia.
+Autor: Jorge Ferguson
+
+Declaración de uso de IA: se utilizó OpenAI Codex como herramienta de apoyo
+para comprender lo que pedía cada inciso del enunciado y como asistencia al escribir
+y depurar el código. El análisis, la verificación de resultados y su interpretación
+fueron revisados por el autor.
 """
 import hashlib
 import importlib.metadata

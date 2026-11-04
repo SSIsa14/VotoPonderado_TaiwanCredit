@@ -1,14 +1,14 @@
 {
   "responsabilidad": "Jorge: 2.3, 2.4, 3.1, 3.2, 3.3",
   "asistencia_IA": "OpenAI Codex; requiere revisión y comprensión del integrante",
-  "python": "3.12.14",
+  "python": "3.12.3",
   "paquetes": {
     "numpy": "2.5.4",
     "pandas": "3.1.0",
     "matplotlib": "3.11.2",
     "scikit-learn": "1.9.1",
     "scipy": "1.18.1",
-    "jupyter": "1.1.1",
+    "jupyter": "no instalado",
     "nbclient": "0.11.0",
     "nbformat": "5.11.1"
   },
@@ -27,19 +27,23 @@
     0,
     1,
     2,
-    3
+    3,
+    4,
+    5,
+    6,
+    7
   ],
   "hilos": {
-    "OMP_NUM_THREADS": "1",
-    "OPENBLAS_NUM_THREADS": "1",
-    "MKL_NUM_THREADS": "1"
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "MKL_NUM_THREADS": null
   },
   "fuentes_sha256": {
     "src/datos.py": "a374749057988d80b1b9a9ca01118fecf2626aaeda26cc217b456931db87bf0a",
     "src/pesos.py": "db361e278bfc70c8ee5e558e120cf4323835238ceed188a0b85853adf80cc6b0",
     "src/bosque.py": "50e9d73a1c5db4aa6b780bb12e44619e3f986079e4ab8a4565a1d0ef0857ec91",
     "src/evidencia.py": "565b5289dd2595b72ae5d6d76848456b3eda10d5352c75b310d192f71758cc0e",
-    "src/flexibilidad.py": "59496665c062ac2ea4abdd7b920135d728a91db00b75affacc5db279a6318114"
+    "src/flexibilidad.py": "82deab75d103e210a296d997c13cb480aa5b9c3d3e5cbbe28b5cfd5f0892eb04"
   },
   "secciones": {
     "2.3–2.4": {
@@ -77,19 +81,19 @@
       "valores_nef_unicos": 5992,
       "grupos": 5,
       "tolerancia_reconciliacion": 1e-12,
-      "mae_global": 0.26470347953063583,
+      "mae_global": 0.2647034795306359,
       "error_reconciliacion": 0.0,
       "posiciones_auditadas_pesos": [
         0,
-        1511,
         1866,
+        3615,
         5125,
         5999
       ],
       "consultas_recalculadas_en_ejecucion": {
         "nef_mediano": {
-          "posicion": 1511,
-          "indice": 22904
+          "posicion": 3615,
+          "indice": 591
         },
         "nef_minimo": {
           "posicion": 1866,
@@ -100,12 +104,12 @@
           "indice": 13712
         }
       },
-      "segundos_celdas_nuevas": 0.8698409169992374,
-      "rss_maximo_proceso_MiB": 643.8046875,
+      "segundos_celdas_nuevas": 3.606534277998435,
+      "rss_maximo_proceso_MiB": 633.32421875,
       "artefactos_sha256": {
-        "resultados/parte2_evidencia_prueba.csv": "e48998e3d4a53cd87c543b9571bf3b5750e602f27a62eadcca555b5baa45f662",
-        "resultados/parte2_quintiles.csv": "8cfa83131570834142a79c948b286dc19f37d181ae2b16b2037d89129473a7c0",
-        "resultados/parte2_aporte_memo.md": "cd94d7c079629ca6789f635424d8723aec751f89c35ae4ac46caabcbf4c52cb6",
+        "resultados/parte2_evidencia_prueba.csv": "6e2963e3fe822e2d001dc7c86e3911480d8da1af639c51fcbdc536767e316fee",
+        "resultados/parte2_quintiles.csv": "448f3a833036a918a2a289b9ed10da21a12b5413702c4050208a1d7b15340f93",
+        "resultados/parte2_aporte_memo.md": "8acd26662aae08d99ae512eeee773ba9a27ecbbdb2d03d8a29b20819a0cd9fde",
         "figs/parte2_mae_quintiles.png": "a6203cf3765821a5f726293181ed9aacca956dc46dcecc55060ca88a5522b582"
       }
     },
@@ -4125,9 +4129,9 @@
       "diagnostico_diseno_completo": {
         "rango_aumentado": 24,
         "columnas_aumentadas": 24,
-        "tolerancia_rango": 2.1098042176802945e-09,
-        "condicion_diseno": 16.83667268164814,
-        "condicion_gram": 283.4735469889545
+        "tolerancia_rango": 2.1098042176802936e-09,
+        "condicion_diseno": 16.836672681648032,
+        "condicion_gram": 283.47354698894907
       },
       "duplicados_submuestra": 0,
       "diagnostico_vecinos_submuestra": {
@@ -4149,7 +4153,7 @@
             10.0,
             31.622776601683793,
             100.0,
-            316.22776601683796,
+            316.2277660168379,
             1000.0,
             3162.2776601683795,
             10000.0,
@@ -4211,18 +4215,18 @@
       "desempate_minimos": "primer valor de rejilla en igualdad exacta de MSE",
       "tolerancia_traza": 1e-08,
       "tolerancia_prediccion_estricta": 1e-08,
-      "segundos_barridos": 94.71310379300121,
-      "segundos_notebook": 97.0733974600007,
-      "rss_maximo_proceso_MiB": 568.38671875,
+      "segundos_barridos": 156.21076383299805,
+      "segundos_notebook": 162.93277840600058,
+      "rss_maximo_proceso_MiB": 491.89453125,
       "artefactos_sha256": {
-        "resultados/parte3_verificacion_trazas.csv": "2568365989e03ea8a811c33154af7f25a4d28a070a16217c3d98953feca4439d",
-        "resultados/parte3_error_flexibilidad.csv": "d1e7b11f230626f0b3f3ac74a72465ea4e3538d5c3207de34c9cc62b1ca3a4b2",
-        "figs/parte3_error_flexibilidad.png": "94d7502bd0b3fbc0e892f40e772e3d2810d504ef5b50156770a28d7dc36d810e"
+        "resultados/parte3_verificacion_trazas.csv": "ad4494a9fb198e4843e07ba39cf9e2b785412c08f7523dd207c1a81c59f72d93",
+        "resultados/parte3_error_flexibilidad.csv": "6b7f4c9cb12fded7031e70a8a0b69ee54fbd401eba23edb99d16042723aa1440",
+        "figs/parte3_error_flexibilidad.png": "cd50552e88e500b8d6fac5e11cc85045027d3e7226fb1f2abe37a19d9b9bbcd6"
       }
     }
   },
   "notebooks_fuente_sha256": {
-    "04_evidencia_2_1_2_2.ipynb": "15d6e2ab14659414194ad3fea98c2949f37e638c2bf121920c4b7c2edad2d8f6",
+    "04_evidencia_2_1_2_2.ipynb": "d3da59de52f3a035fb2a3c19dba5494801736bc671092123eac0c126fe425e70",
     "05_flexibilidad_3_1_3_3.ipynb": "2b64d1a639b4a9c1b220ba3a2863ddc92ebbba82792729349b0510a9f8f5b0cb"
   },
   "ejecucion_aislada": {
@@ -4244,7 +4248,7 @@
     }
   },
   "auxiliares_entorno_ejecucion_sha256": {
-    "resultados/consultas.json": "1a119b86e06b6b41a2bac0b1805e690fca58205fcd0948494ab69d956a894a37",
+    "resultados/consultas.json": "15016e456c0a1ee57c832cac88251b477c288fb096029154a636929e57df9915",
     "resultados/sd_taiwan.csv": "bf1d659164d76b65e03751d704652e2b2e06c0469ab6b43d1eed7310f14d77a4"
   },
   "entradas_compartidas_protegidas_sha256": {

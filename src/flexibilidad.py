@@ -114,6 +114,14 @@ def hash_archivo(ruta):
     return hashlib.sha256(Path(ruta).read_bytes()).hexdigest()
 
 
+def _version(paquete):
+    # el metapaquete jupyter no siempre está instalado aunque sí sus componentes
+    try:
+        return importlib.metadata.version(paquete)
+    except importlib.metadata.PackageNotFoundError:
+        return "no instalado"
+
+
 def registrar_procedencia(seccion, detalles, artefactos, raiz=Path("..")):
     """Registro pequeño y específico del aporte; agrega una sección por notebook."""
     raiz = Path(raiz)
@@ -125,7 +133,7 @@ def registrar_procedencia(seccion, detalles, artefactos, raiz=Path("..")):
         "responsabilidad": "Jorge: 2.3, 2.4, 3.1, 3.2, 3.3",
         "asistencia_IA": "OpenAI Codex; requiere revisión y comprensión del integrante",
         "python": platform.python_version(),
-        "paquetes": {p: importlib.metadata.version(p) for p in
+        "paquetes": {p: _version(p) for p in
                      ("numpy", "pandas", "matplotlib", "scikit-learn", "scipy", "jupyter", "nbclient", "nbformat")},
         "entradas_sha256": {p: hash_archivo(raiz / p) for p in protegidos[:2]},
         "auxiliares_entorno_ejecucion_sha256": {p: hash_archivo(raiz / p) for p in protegidos[2:]},
